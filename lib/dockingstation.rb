@@ -6,8 +6,7 @@ class DockingStation
   end
 
   def release_bike
-    @no_of_bikes > 0 ? Bike.new : raise("No bikes!")
-    @no_of_bikes -= 1
+    @no_of_bikes > 0 ? (@no_of_bikes -= 1; return Bike.new) : raise("No bikes!")
   end
 
   def dock(bike)
