@@ -3,6 +3,7 @@ class DockingStation
   attr_reader :bike
   def initialize
     @no_of_bikes = 0
+    @bikes = []
   end
 
   def release_bike
@@ -10,7 +11,7 @@ class DockingStation
   end
 
   def dock(bike)
-    @no_of_bikes == 1 ? raise("Dock is full!") : (@no_of_bikes += 1; @bike = bike)
+    @no_of_bikes == 20 ? raise("Dock is full!") : (@no_of_bikes += 1; @bike = bike)
   end
 
 end
