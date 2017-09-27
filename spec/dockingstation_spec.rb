@@ -9,7 +9,9 @@ describe DockingStation do
   end
 
   describe "bike released" do
-    bike = DockingStation.new.release_bike
+    docking_station = DockingStation.new
+    docking_station.dock(Bike.new)
+    bike = docking_station.release_bike
     it 'should release an instance of the bike class' do
       expect(bike.class).to eq Bike
     end
@@ -33,4 +35,9 @@ describe DockingStation do
     end
   end
 
+  describe 'when there are no bikes in the docking station,' do
+    it 'release_bike should raise an error' do
+      expect{ subject.release_bike }.to raise_error("No bikes!")
+    end
+  end
 end
