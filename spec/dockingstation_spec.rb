@@ -4,7 +4,7 @@ describe DockingStation do
 
   describe "release_bike" do
     it 'should release bike' do
-      expect(DockingStation.new).to respond_to(:release_bike)
+      expect(subject).to respond_to(:release_bike)
     end
   end
 
@@ -21,7 +21,8 @@ describe DockingStation do
 
   describe "dock" do
     it 'should dock bike at station' do
-      expect(DockingStation.new).to respond_to(:dock).with(1).argument
+      expect(subject).to respond_to(:dock).with(1).argument
     end
   end
+  
 end
